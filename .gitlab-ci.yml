@@ -1,0 +1,81 @@
+image: node:8
+stages:
+    - build_dev
+    - build_sa4a
+    - build_demo
+    - build_prod
+
+build_dev:
+    stage: build_dev
+    variables:
+        ENVIRONMENT: dev
+    only:
+        - dev
+    script:
+        - sshpass ssh -t admin@84.201.139.43 "cd web/front.dev.biminar.ru/public_html
+            && npm uninstall prodamus-ui
+            && git checkout -f
+            && git fetch
+            && git checkout dev
+            && git pull origin dev
+            && npm install
+            && export ENVIRONMENT=dev
+            && npm run build
+            && rm -rf build && mv dist build"
+
+build_sa4a:
+    stage: build_sa4a
+    variables:
+        ENVIRONMENT: sa4a
+    only:
+        - sa4a_logic_audit
+    script:
+        - sshpass ssh -t admin@84.201.139.43 "rm -rf /tmp/sa4a-biminar-config
+            && git clone git@gitlab.dev-gns.com:prodamus/biminar-frontend-configs.git /tmp/sa4a-biminar-config
+            && cd ~/web/sa4a-react.dev.prodamus.ru/public_html
+            && npm uninstall prodamus-ui
+            && git checkout -f
+            && git fetch
+            && git checkout sa4a_logic_audit
+            && git pull origin sa4a_logic_audit
+            && cp -f /tmp/sa4a-biminar-config/prod.js ~/web/sa4a-react.dev.prodamus.ru/public_html/src/config.js
+            && npm install
+            && export ENVIRONMENT=sa4a
+            && npm run build
+            && rm -rf build
+            && mv dist build
+            && rm -rf /tmp/sa4a-biminar-config"
+
+build_demo:
+    stage: build_demo
+    variables:
+        ENVIRONMENT: prod
+    only:
+        - master
+    script:
+        - sshpass ssh -t prodamus@biminar.ru -p 1002 "rm -rf /tmp/config-biminar &&
+            git clone git@gitlab.dev-gns.com:prodamus/biminar-frontend-configs.git /tmp/config-biminar &&
+            cd /var/www/biminar.ru/frontend &&
+            npm uninstall prodamus-ui &&
+            git checkout -f && 
+            git pull origin master &&
+            cp -f /tmp/config-biminar/prod.js /var/www/biminar.ru/frontend/src/config.js &&
+            npm install &&
+            npm run build && rm -rf build && mv dist build"
+
+build_prod:
+    stage: build_prod
+    variables:
+        ENVIRONMENT: prod
+    only:
+        - /^v[\d\.]+$/
+    script:
+        - sshpass ssh -t prodamus@biminar.ru -p 1002 "rm -rf /tmp/config-biminar &&
+            git clone git@gitlab.dev-gns.com:prodamus/biminar-frontend-configs.git /tmp/config-biminar &&
+            cd /var/www/biminar.ru/frontend &&
+            npm uninstall prodamus-ui &&
+            git fetch --tags &&
+            git checkout -f tags/$CI_COMMIT_TAG &&
+            cp -f /tmp/config-biminar/prod.js /var/www/biminar.ru/frontend/src/config.js &&
+            npm install &&
+            npm run build && rm -rf build && mv dist build"

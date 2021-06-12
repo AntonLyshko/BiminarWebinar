@@ -1,0 +1,60 @@
+.control {
+  .input-chat {
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    padding-top: 12px;
+    border-top: 10px solid #2b3e4f;
+    min-height: -moz-fit-content;
+    min-height: fit-content;
+  }
+
+  .scroll-to-bottom {
+    bottom: 160px;
+    right: 60px;
+  }
+}
+
+.input-chat {
+  display: flex;
+  align-items: center;
+  min-height: fit-content;
+  width: 100%;
+
+  &__wrap {
+    width: 100%;
+  }
+
+  &__button {
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    border-radius: 40px;
+
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__input {
+    line-height: 16px;
+    border-radius: 4px;
+    background: #2c3e50 !important;
+    border-color: #2c3e50 !important;
+    color: white !important;
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.7) !important;
+    }
+  }
+
+  &__input[disabled] {
+    opacity: 0.5;
+  }
+}

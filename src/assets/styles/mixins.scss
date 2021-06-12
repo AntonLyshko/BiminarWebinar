@@ -1,0 +1,51 @@
+@mixin font($name, $fontName) {
+    @font-face {
+        font-weight: normal;
+        font-family: $name;
+        font-style: normal;
+        src: url('../fonts/'+$fontName+'.woff2') format('woff2'), url('../fonts/'+$fontName+'.woff') format('woff');
+        font-display: swap;
+    }
+}
+
+@mixin e($width) {
+    @media only screen and (max-width: $width+ 'px') {
+        @content;
+    }
+}
+
+@mixin min($width) {
+    @media only screen and (min-width: $width+ 'px') {
+        @content;
+    }
+}
+
+@mixin xl {
+    @media screen and (max-width: 1980px) {
+        @content;
+    }
+}
+
+@mixin lg {
+    @media screen and (max-width: 1200px) {
+        @content;
+    }
+}
+
+@mixin md {
+    @media screen and (max-width: 992px) {
+        @content;
+    }
+}
+
+@mixin sm {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin xs {
+    @media screen and (max-width: 576px) {
+        @content;
+    }
+}

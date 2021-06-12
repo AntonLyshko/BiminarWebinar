@@ -1,0 +1,49 @@
+$antd-primary-color: #3498db;
+$antd-default-color: #27ae60;
+$antd-secondary-color: #95a5a6;
+$antd-light-color: #ecf0f1;
+
+$antd-brand-color: #34495e;
+
+$antd-border-radius: 5px;
+
+// Common
+$antd-paddings: 7.5px 8px;
+$antd-font-family: 'DINPro', sans-serif;
+$antd-font-weight: 500;
+$antd-font-size: 15px;
+
+// Scrolls
+$antd-scroll-bgc: rgba(0, 0, 0, 0.1);
+$antd-scroll-thumb-bgc: $antd-primary-color;
+
+// Buttons
+$antd-btn-border-radius: $antd-border-radius;
+$antd-btn-bgc-disabled: rgba(0, 0, 0, 0.05);
+$antd-btn-color-disabled: $antd-secondary-color;
+$antd-btn-color: $antd-light-color;
+
+$antd-btn-dashed-bgc: #495C6D;
+$antd-btn-dashed-bgc-hover: lighten(#495C6D, 10%);
+$antd-btn-dashed-bgc-active: darken(#495C6D, 10%);
+
+$antd-btn-primary-bgc: $antd-primary-color;
+$antd-btn-primary-bgc-hover: lighten(desaturate(#3498db, 0.24), 9.41);
+$antd-btn-primary-bgc-active: darken(desaturate(#3498db, 8.58), 10.59);
+
+$antd-btn-default-bgc: $antd-default-color;
+$antd-btn-default-bgc-hover: lighten(desaturate(#27ae60, 18.00), 11.57);
+$antd-btn-default-bgc-active: darken(desaturate(adjust-hue(#27ae60, 3), 5.05), 4.12);
+
+$antd-btn-link-color: $antd-primary-color;
+$antd-btn-link-color-hover: darken(desaturate(#3498db, 8.58), 10.59);
+$antd-btn-link-color-disabled: $antd-secondary-color;
+
+// Inputs
+$antd-input-bgc: rgba(0, 0, 0, 0.1);
+$antd-input-bgc-disabled: rgba(0, 0, 0, 0.05);
+$antd-input-color: $antd-light-color;
+$antd-input-color-disabled: $antd-secondary-color;
+$antd-input-border-radius: $antd-border-radius;
+$antd-input-placeholder-color: $antd-secondary-color;
+$antd-input-border-color-hover: $antd-primary-color;

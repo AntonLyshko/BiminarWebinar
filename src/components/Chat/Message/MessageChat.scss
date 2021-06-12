@@ -1,0 +1,71 @@
+$class: "message-chat";
+.#{$class} {
+  display: flex;
+  position: relative;
+  margin-top: 10px;
+  min-height: fit-content;
+  text-align: left;
+  transform: translateZ(0);
+  font-family: "RobotoMono";
+
+  &.unread {
+    .message-chat__content {
+      border: 1px solid #fff;
+    }
+  }
+
+  &__content {
+    position: relative;
+    background: #2c3e50;
+    border-radius: 4px;
+    margin-left: 20px;
+    max-width: 65%;
+    min-width: 30%;
+    height: fit-content;
+
+    &:after {
+      position: absolute;
+      top: 10px;
+      content: "";
+      width: 0;
+      height: 0;
+      left: -10px;
+      border-style: solid;
+      border-width: 8px 10px 8px 0;
+      border-color: transparent #2c3e50 transparent transparent;
+    }
+  }
+
+  &__username {
+    color: #95a5a6 !important;
+    line-height: 1.66667 !important;
+  }
+
+  .ant-comment-content-detail {
+    word-break: normal;
+  }
+
+  &--mine {
+    justify-content: flex-end;
+
+    .#{$class} {
+      &__content {
+        margin-left: 0;
+        margin-right: 20px;
+        font-family: "RobotoMono";
+
+        &:after {
+          right: -10px;
+          left: initial;
+          border-style: solid;
+          border-width: 8px 0 8px 10px;
+          border-color: transparent transparent transparent #2c3e50;
+        }
+      }
+
+      &__avatar {
+        order: 2;
+      }
+    }
+  }
+}

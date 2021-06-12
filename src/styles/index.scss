@@ -1,0 +1,19 @@
+$mainBackground: #2d3e50;
+$elementBackground: #34495e;
+$borderColor: #495c6e;
+$inputBackground: #2c3e50;
+$greyText: #7e9093;
+$blueText: #2b7cbb;
+$greyText2: #95a5a5;
+$greyButton: #455869;
+$greenButton: #27ae61;
+$blueButton: #3497d9;
+$redButton: #ff4945;
+$orangeButton: #f39c11;
+$greyIcon: #a1b3b5;
+$autoplayMargin: 10px;
+
+// TODO: вынести в UI
+.ant-dropdown {
+  box-shadow: 0 0 30px rgba(26, 40, 54, 0.2);
+}

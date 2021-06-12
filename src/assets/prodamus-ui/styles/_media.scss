@@ -1,0 +1,11 @@
+$media-xs-less: 'only screen and (max-width: 375px)';
+$media-sm-less: 'only screen and (max-width: 575px)';
+$media-md-less: 'only screen and (max-width: 767px)';
+$media-lg-less: 'only screen and (max-width: 991px)';
+$media-xl-less: 'only screen and (max-width: 1199px)';
+
+$media-xs-more: 'only screen and (min-width: 376px)';
+$media-sm-more: 'only screen and (min-width: 576px)';
+$media-md-more: 'only screen and (min-width: 768px)';
+$media-lg-more: 'only screen and (min-width: 992px)';
+$media-xl-more: 'only screen and (min-width: 1200px)';

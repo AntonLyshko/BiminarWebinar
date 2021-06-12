@@ -1,0 +1,132 @@
+@import "../../../styles/media";
+
+$class: 'conferee-card';
+.#{$class} {
+  $default-bgc: #2b3d4f;
+  $default-color: #95a5a6;
+  $hand-up-bgc: #3397db;
+  $hand-up-hover-bgc: #5dade1;
+  $live-bgc: #27ad5f;
+  $live-hover-bgc: #51bd7f;
+  $with-status-color: #fff;
+  $danger: #e74b3b;
+  border: 1px solid transparent;
+  width: 130px;
+  padding: 10px 15px;
+  height: 180px;
+  border-radius: 5px;
+  font-size: 15px;
+  line-height: 24px;
+  background-color: $default-bgc;
+  color: $default-color;
+  font-family: DINPro, sans-serif;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s;
+
+  &__avatar {
+    width: 90px;
+    height: 90px;
+    border-radius: 90px;
+  }
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  @media screen and (max-width: $media-md-less) {
+    width: 100px;
+    height: 136px;
+
+    &__avatar {
+      width: 40px !important;
+      height: 40px !important;
+    }
+  }
+
+  &--is-hand-up {
+    background-color: $hand-up-bgc;
+    color: $with-status-color;
+
+    &:hover {
+      background-color: $hand-up-hover-bgc;
+    }
+  }
+
+  &--is-live {
+    background-color: $live-bgc;
+    color: $with-status-color;
+
+    &:hover {
+      background-color: $live-hover-bgc;
+
+      .icon-stop {
+        width: 12px;
+        height: 12px;
+        position: relative;
+        top: -2px;
+        right: 2px;
+      }
+    }
+  }
+
+  &--is-banned {
+    border-color: $danger;
+
+    .#{$class} {
+      &__wrap {
+        opacity: 0.5;
+      }
+
+      &__actions {
+        svg {
+          fill: $danger;
+        }
+      }
+    }
+  }
+
+  &__avatar {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  &__full-name {
+    max-height: 48px;
+    width: 100%;
+    overflow: hidden;
+    align-self: baseline;
+
+    &>div {
+      width: 100%;
+      text-align: center;
+      font-weight: 500;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  &__actions {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+
+    svg {
+      fill: #fff;
+      width: 15px;
+      height: 15px;
+    }
+
+    .icon-danger {
+      fill: $danger;
+    }
+  }
+}
+
+

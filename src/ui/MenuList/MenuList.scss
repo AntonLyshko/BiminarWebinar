@@ -1,0 +1,38 @@
+/** Меню в выпадающем списке */
+$menu-list-background: #34495e;
+$menu-list-color: #95a5a6;
+$menu-list-border: #495c6e;
+$menu-list-item-hover-background: inherit;
+$menu-list-item-hover-color: #fff;
+$menu-list-item-active-background: inherit;
+$menu-list-item-active-color: #fff;
+
+.menu-list {
+  font-family: 'DINPro', sans-serif;
+  font-size: 15px;
+  min-width: 150px;
+  border: none;
+  background-color: $menu-list-background;
+
+  &__item {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+    margin: 0 !important;
+    color: $menu-list-color;
+    border-bottom: 1px solid $menu-list-border;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &:hover {
+      background-color: $menu-list-item-hover-background;
+      color: $menu-list-item-hover-color;
+    }
+
+    &:active {
+      background-color: $menu-list-item-active-background;
+      color: $menu-list-item-active-color;
+    }
+  }
+}

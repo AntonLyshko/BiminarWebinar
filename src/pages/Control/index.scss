@@ -1,0 +1,185 @@
+@import "../../styles/index.scss";
+@import "../../styles/antd/_variables.scss";
+@import "../../styles/media";
+
+.control {
+  height: 100%;
+
+  &__header {
+    width: 50%;
+    display: flex;
+    // flex-wrap: wrap;
+    flex-direction: row;
+    padding: 0 20px;
+    margin: 10px 0;
+    justify-content: space-between;
+    background: #34495e;
+  }
+
+  &__stream {
+    width: 100%;
+    margin-bottom: 4px;
+    display: none !important;
+    width: 0;
+    height: 0;
+
+    &--active {
+      height: auto;
+      width: 100%;
+      display: inline-flex !important;
+
+      @media screen and (max-width: $media-md-less) {
+        max-width: 500px;
+      }
+    }
+
+    video {
+      width: 100%;
+      //max-height: 300px;
+    }
+  }
+
+  &__tabs {
+    width: 50%;
+    display: flex;
+    // flex-wrap: wrap;
+    flex-direction: row;
+    padding: 0 20px;
+    margin: 10px 0;
+    justify-content: space-between;
+    background: #34495e;
+  }
+
+  &__wrapView {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+
+    @media screen and (max-width: $media-md-less) {
+      flex-direction: column;
+    }
+  }
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    margin-right: 6px;
+
+    &--isVertical {
+      margin-right: 0;
+    }
+
+    &--isMobile {
+      flex: 1;
+    }
+
+    &--isDesktop {
+      flex: 2;
+    }
+
+    &__users {
+      flex: 1;
+      background: #34495e;
+      overflow-y: auto !important;
+    }
+
+    &__buttons {
+      flex: 0;
+      margin: 10px 0;
+    }
+
+    &__button {
+      margin: 5px;
+      color: white;
+      background-color: $antd-btn-dashed-bgc !important;
+      border-color: $antd-btn-dashed-bgc !important;
+      display: inline-flex;
+      align-items: center;
+
+      span > svg {
+        width: 15px;
+        height: 15px;
+        margin-right: 6px;
+      }
+
+      &--active {
+        background-color: $greenButton !important;
+        border-color: $greenButton !important;
+      }
+
+      &:hover,
+      &:focus {
+        color: white;
+        filter: brightness(120%);
+      }
+
+      &__icon {
+        margin: 0 4px;
+        fill: white;
+      }
+    }
+
+    &__silence {
+      margin: 5px;
+      color: white;
+      background-color: $blueButton !important;
+      border-color: $blueButton !important;
+
+      &--active {
+        background-color: $orangeButton !important;
+        border-color: $orangeButton !important;
+      }
+
+      &:hover,
+      &:focus {
+        color: white;
+        filter: brightness(120%);
+      }
+
+      &__icon {
+        margin-right: 4px;
+        fill: white;
+      }
+    }
+  }
+
+  &__wrapAdvancedStream {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    &--isDesktop {
+      min-width: 400px;
+    }
+  }
+
+  &__streamsMainVideo {
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+    background: #34495e;
+
+    video {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__streamsAdvancedVideo {
+    position: relative;
+    width: 100%;
+    margin-bottom: 10px;
+    background: #34495e;
+    height: fit-content;
+
+    &--isTablet {
+      width: 60%;
+      margin-right: 10px;
+    }
+
+    video {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+$btn-success-bgc: #27ae60;
+$btn-success-bgc-hover: lighten(desaturate(#27ae60, 18.00), 11.57);
+$btn-success-bgc-active: darken(desaturate(adjust-hue(#27ae60, 3), 5.05), 4.12);
+.ant-btn-success {
+  background-color: $btn-success-bgc;
+  border-color: $btn-success-bgc;
+
+  &:hover, &:focus {
+    background-color: $btn-success-bgc-hover;
+    border-color: $btn-success-bgc-hover;
+  }
+
+  &:active, &.ant-btn-active {
+    background-color: $btn-success-bgc-active;
+    border-color: $btn-success-bgc-active;
+  }
+}
+

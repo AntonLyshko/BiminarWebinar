@@ -1,0 +1,12 @@
+.boxButtons,
+#secondaryVideo,
+#primaryVideo {
+  .ant-btn {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+
+  .spin-xs {
+    margin-right: 5px;
+  }
+}

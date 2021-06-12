@@ -1,0 +1,125 @@
+.ant-btn {
+  height: 40px;
+  padding-bottom: 8px;
+  padding-top: 8px;
+  border-radius: 6px;
+  font-weight: normal;
+  font-size: inherit;
+  line-height: inherit;
+
+  &:active {
+    transition: all 0s !important;
+  }
+
+  &[disabled] {
+    background-color: #d9d9d9 !important;
+    border-color: #d9d9d9 !important;
+    color: rgba(0, 0, 0, 0.25) !important;
+  }
+}
+
+.ant-btn-round {
+  border-radius: 50px;
+  font-weight: normal;
+  font-size: 16px;
+
+  &:hover, &:focus {
+    background-color: #F4F5F7;
+    border-color: #F4F5F7;
+  }
+
+  &:active, &.ant-btn-active {
+    background-color: #95A5A5;
+    border-color: #95A5A5;
+    color: #fff;
+  }
+}
+
+.ant-btn-dangerous {
+  color: #e74c3c;
+  background-color: #fff;
+  border-color: #e74c3c;
+
+  &:hover, &:focus {
+    background-color: #ef5350;
+    border-color: #ef5350;
+    color: #fff;
+  }
+
+  &:active, &.ant-btn-active {
+    background-color: #e53935;
+    border-color: #e53935;
+    color: #fff;
+  }
+}
+
+.ant-btn-primary {
+  background-color: #3498db;
+  border-color: #3498db;
+
+  &:hover, &:focus {
+    background-color: #5dade2;
+    border-color: #5dade2;
+  }
+
+  &:active, &.ant-btn-active {
+    background-color: #2a7aaf;
+    border-color: #2a7aaf;
+  }
+}
+
+.ant-btn-success {
+  background-color: #27ae60;
+  border-color: #27ae60;
+
+  &:hover, &:focus {
+    background-color: lighten(desaturate(#27ae60, 18.00), 11.57);
+    border-color: lighten(desaturate(#27ae60, 18.00), 11.57);
+  }
+
+  &:active, &.ant-btn-active {
+    background-color: darken(desaturate(adjust-hue(#27ae60, 3), 5.05), 4.12);
+    border-color: darken(desaturate(adjust-hue(#27ae60, 3), 5.05), 4.12);
+  }
+}
+
+.ant-btn-link {
+  color: #607d8b;
+
+  &:hover, &:focus {
+    color: #3498db;
+  }
+
+  &:active, &.ant-btn-active {
+
+    color: #2a7aaf;
+  }
+}
+
+.ant-btn-lg {
+  padding-top: 9px;
+  padding-bottom: 9px;
+  font-size: 18px;
+  line-height: 24px;
+  height: 45px;
+  border-radius: 6px;
+}
+
+.ant-btn-round.ant-btn-lg {
+  height: 45px;
+  padding: 9px 20px;
+  font-size: 16px;
+}
+
+.ant-btn-sm {
+  height: 24px;
+  padding: 0 7px;
+  font-size: 14px;
+  border-radius: 3px;
+  line-height: 22px;
+}
+
+.ant-btn-dangerous.ant-btn-primary {
+  background-color: #e74c3c;
+  border-color: #e74c3c;
+}

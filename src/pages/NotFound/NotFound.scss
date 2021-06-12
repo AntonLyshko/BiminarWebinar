@@ -1,0 +1,47 @@
+.nof_found {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  color: #fff;
+  font: 16px Arial;
+  background-color: #3a6091;
+  background-image: url('https://papabot.ru/images/logo.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.nof_found > div {
+  width: 100%;
+  position: absolute;
+  bottom: 50px;
+  padding: 0px;
+  margin: 0px;
+  text-align:center;
+}
+.nof_found > div > div {
+  max-width: 800px;
+  margin: 0px auto;
+}
+.nof_found .nobr {
+  white-space: nowrap;
+  margin-left: 20px;
+}
+.nof_found a {
+  color: #fff;
+  text-decoration: underline;
+}
+.nof_found a:hover {
+  text-decoration: none;
+}
+
+
+@media (max-width: 724px), (max-height: 724px) {
+  .nof_found {
+    background-size: contain;
+  }
+}

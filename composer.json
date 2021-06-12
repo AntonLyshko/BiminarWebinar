@@ -1,0 +1,22 @@
+{
+  "require": {
+    "prodamus/secure": "dev-master"
+  },
+  "config": {
+    "process-timeout": 1800,
+    "fxp-asset": {
+      "enabled": false
+    }
+  },
+  "repositories": [
+    {
+      "type": "git",
+      "url": "git@gitlab.dev-gns.com:prodamus/secure.git"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "app\\": "app/"
+    }
+  }
+}

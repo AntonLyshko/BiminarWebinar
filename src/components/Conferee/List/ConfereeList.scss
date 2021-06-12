@@ -1,0 +1,21 @@
+.conferee-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 80%;
+
+  & .ant-badge {
+    max-width: 55px;
+  }
+
+  &__wrap {
+    margin: auto;
+    display: flex;
+    align-items: center;
+  }
+
+  &__item{
+    margin-right: 7.5px;
+    margin-left: 7.5px;
+  }
+}

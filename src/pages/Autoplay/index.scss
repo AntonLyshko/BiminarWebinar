@@ -1,0 +1,631 @@
+@import "../../styles/index.scss";
+@import "../../styles/media";
+
+html {
+  --mode: default;
+  --userlist-height: 55px;
+  --chatlist-height: 200px;
+  --playerPage-minHeight: 200px;
+  --userlist-spacer-height: 0px;
+}
+
+#chatlist {
+  background-color: #34495e;
+}
+
+.table {
+  width: 100% !important;
+}
+
+.video-wrap {
+  max-width: none;
+  position: relative;
+  width: 100% !important;
+  height: auto !important;
+  margin-bottom: 5px;
+}
+
+.player-userlist {
+  height: var(--userlist-height);
+  margin-bottom: 5px;
+}
+#playerUserList1 {
+  display: block;
+  height: 100%;
+  //overflow: auto;
+}
+#playerUserList1-spacer {
+  display: none;
+}
+#playerUserList2 {
+  display: none;
+}
+.player-buttonlist {
+  min-height: 70px;
+  padding: 15px !important;
+}
+
+#playerButtonList {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .control-chat {
+    display: none;
+  }
+}
+.player-buttonlist-left {
+  display: flex;
+  :not(:nth-child(1)) {
+    margin-left: 10px;
+  }
+}
+.player-buttonlist-right {
+  display: flex;
+  flex-wrap: nowrap;
+  :not(:nth-child(1)) {
+    margin-left: 10px;
+  }
+
+  .fa {
+    font-size: 14px;
+  }
+
+  .ant-btn {
+    padding: 4px 15px;
+  }
+}
+#chatlist-controls {
+  min-height: 70px;
+  padding: 10px;
+}
+.control-chat {
+  display: none;
+}
+
+.playerContent-rowTop {
+  height: 100%;
+}
+.playerContent-rowBottom {
+  min-height: 60px;
+}
+.playerContent-columnLeft,
+.playerContent-columnRight {
+  vertical-align: top !important;
+}
+.playerContent-columnLeft {
+  width: 70%;
+  padding-right: 3px;
+}
+.playerContent-columnRight {
+  width: 30%;
+  min-width: 400px;
+  padding-left: 3px;
+}
+
+.autoplay {
+  &__header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .ant-result {
+      background-color: #fff;
+      border-radius: 2px;
+      margin-top: 30px;
+      -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);
+      -moz-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);
+      box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);
+    }
+
+    .ant-result-title {
+      font-size: 22px;
+    }
+
+    .ant-result-subtitle {
+      font-size: 16px;
+    }
+
+    h4 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      font-size: 18px;
+    }
+  }
+
+  &__handup {
+    position: relative;
+    background-color: black;
+    justify-content: center;
+    display: none !important;
+    width: 0;
+    height: 0;
+
+    &--active {
+      height: fit-content;
+      width: 100%;
+      display: inline-flex !important;
+    }
+  }
+
+  &__myHandup {
+    #streamer {
+      width: 100%;
+    }
+
+    &--active {
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      width: 100%;
+      height: -moz-fit-content;
+      height: fit-content;
+      background-color: black;
+    }
+
+    video {
+      width: 100%;
+    }
+  }
+
+  &__wrapMainStream {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    margin-right: 10px;
+    overflow: hidden;
+    height: 100%;
+  }
+
+  &__wrapAdvancedStream {
+    position: relative;
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    &--active {
+      display: flex;
+      &#video-sec {
+        margin-bottom: 5px;
+
+        @media (orientation: portrait) and (max-width: 767px) {
+          margin-bottom: 2px;
+        }
+
+        @media (orientation: landscape) and (max-height: 450px) {
+          margin-bottom: 2px;
+        }
+      }
+    }
+
+    .video-wrap {
+      margin-bottom: 0px;
+    }
+  }
+
+  &__wrapAdvancedStreamProportion {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__wrap__button__hand.ant-btn-dangerous {
+    cursor: default;
+    &:hover {
+      background-color: #e74c3c;
+      border-color: #e74c3c;
+    }
+  }
+
+  &__wrap__button__hand,
+  &__wrap__button {
+    display: inline-flex;
+    align-items: center;
+    max-width: fit-content;
+
+    &__icon {
+      margin-right: 4px;
+      fill: white;
+
+      svg {
+        width: 12px;
+        height: 12px;
+      }
+    }
+  }
+
+  &__btnMute,
+  &__btnMuteVideo {
+    width: 40px;
+    height: 32px;
+    margin-left: 15px;
+    text-align: center;
+    font-size: 16px;
+    color: white;
+    line-height: 32px;
+    border-radius: 50%;
+    padding: 0;
+
+    &:hover {
+      background: #5dade2;
+    }
+    &:active {
+      background: #2a7aaf;
+    }
+  }
+
+  &__btnMute {
+    margin-left: 8px;
+  }
+
+  &__play {
+    position: absolute;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 100%;
+    min-height: 100%;
+    padding: 20px 0;
+    // backdrop-filter: blur(20px);
+    cursor: pointer;
+    z-index: 4;
+    text-shadow: 0px 0px 4px black;
+
+    .anticon-play-circle {
+      font-size: 80px;
+      color: $blueButton;
+      margin-bottom: 10px;
+      max-height: fit-content;
+    }
+  }
+
+  &__play-btn {
+    margin-top: 10px;
+  }
+
+  &__blurWrap {
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__blur {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+  }
+
+  &__blur--active {
+    width: 100%;
+    height: fit-content;
+    filter: blur(20px);
+    position: relative;
+    z-index: 3;
+  }
+}
+
+.boxParticipants {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  height: 74px;
+  padding: 0 20px;
+}
+.participantItem {
+  position: relative;
+  margin: auto 15px;
+
+  &:after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    opacity: 0.7;
+    background: #2c3e50;
+  }
+  &:hover .participantItemName {
+    opacity: 1;
+  }
+}
+.participantItemAvatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #ffffff;
+}
+.participantItemName {
+  position: absolute;
+  top: -34px;
+  left: 0;
+  line-height: 24px;
+  padding: 0 8px 2px;
+  transform: translateX(-50%);
+  margin-left: 20px;
+  white-space: nowrap;
+  opacity: 0;
+  background: #495c6e;
+  transition: opacity 0.5s ease-out;
+
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    margin-left: -5px;
+    border: 5px solid transparent;
+    border-top: 5px solid #495c6e;
+  }
+}
+.boxStreamInfo-container {
+  align-self: flex-end;
+}
+
+.boxStreamInfo {
+  display: flex;
+  line-height: 24px;
+  font-family: "DINPro-Medium", sans-serif;
+  font-size: 15px;
+  color: #95a5a6;
+
+  svg {
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+  }
+}
+
+.chatItem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 5px 10px;
+  overflow: hidden;
+}
+
+.ant-modal {
+  min-width: 250px;
+  max-width: 600px;
+  width: fit-content;
+}
+
+html.inchat #playerButtonList {
+  z-index: 5;
+  position: absolute;
+  display: flex;
+  top: 0;
+  bottom: auto;
+  border-bottom: 2px solid #2b3e4f;
+}
+
+@media screen and (min-width: 1025px) {
+  html.mac.no-scroll.no-scroll-track,
+  html.windows.no-scroll.no-scroll-track,
+  html.linux.no-scroll.no-scroll-track,
+  html.freebsd.no-scroll.no-scroll-track {
+    border-right: 5px solid #262626;
+  }
+  html.mac.no-scroll.no-scroll-track body:not(.no-adaptive) .header,
+  html.windows.no-scroll.no-scroll-track body:not(.no-adaptive) .header,
+  html.linux.no-scroll.no-scroll-track body:not(.no-adaptive) .header,
+  html.freebsd.no-scroll.no-scroll-track body:not(.no-adaptive) .header {
+    border-right: 5px solid #262626;
+  }
+}
+
+@media (max-width: 991px) {
+  html {
+    --mode: default-md;
+    --playerUserList1-top: 285px;
+    --playerButtonList-top: 350px;
+  }
+
+  .playerContent-columnLeft,
+  .playerContent-columnRight {
+    width: 50%;
+  }
+  .playerContent-columnRight {
+    min-width: auto;
+  }
+}
+@media (orientation: landscape) and (max-height: 450px) {
+  html {
+    --mode: landscape-maxh450;
+    --playerUserList1-top: 285px;
+    --playerButtonList-top: 350px;
+  }
+
+  #root {
+    padding: 0 5px;
+  }
+  .playerContent-columnLeft,
+  .playerContent-columnRight {
+    width: 50%;
+  }
+  .playerContent-columnLeft {
+    padding-right: 1px;
+  }
+  .playerContent-columnRight {
+    padding-left: 1px;
+  }
+  .playerContent-columnRight {
+    min-width: auto;
+  }
+  .video-wrap {
+    margin-bottom: 2px;
+  }
+  html:not(.mainvideoonly) .control-chat {
+    display: initial !important;
+  }
+  .control-fullscreen {
+    display: none !important;
+  }
+  html:not(.mainvideoonly) #chatlist,
+  html:not(.mainvideoonly) #chatlist-controls {
+    display: none;
+  }
+  #chatlist-controls {
+    min-height: 60px;
+    padding: 5px 10px;
+  }
+  html.mainvideoonly #playerUserList1 {
+    margin-bottom: 2px;
+  }
+  html:not(.mainvideoonly) #playerUserList1 {
+    display: block;
+    width: calc(100vw - 10px);
+    margin-bottom: 2px;
+  }
+  html:not(.mainvideoonly) #playerUserList1-spacer {
+    display: block;
+    height: var(--userlist-spacer-height);
+  }
+  #playerUserList2 {
+    display: none;
+  }
+  //.playerContent-rowBottom {
+  //  height: 60px;
+  //}
+  .player-buttonlist {
+    min-height: 60px;
+    padding: 10px !important;
+  }
+  html.mainvideoonly .player-buttonlist-right {
+    display: none;
+  }
+
+  html.inchat #chatlist {
+    display: flex;
+    position: absolute;
+    top: 62px;
+    right: 5px;
+    width: calc(100% - 10px);
+    height: calc(100% - 124px);
+    z-index: 10;
+  }
+  html.inchat #chatlist-controls {
+    z-index: 2;
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 5px;
+    width: calc(100% - 10px);
+  }
+
+  html:not(.mainvideoonly) #playerButtonList {
+    width: calc(100vw - 10px);
+  }
+}
+@media (orientation: portrait) and (max-width: 767px) {
+  html {
+    --mode: portrait-md;
+  }
+
+  .playerContent-rowTop,
+  .playerContent-rowBottom {
+    flex-flow: column !important;
+  }
+
+  #playerContent > .table-tr > .table-td {
+    width: 100%;
+    max-width: initial;
+  }
+
+  .playerContent-columnLeft {
+    padding-right: 0;
+  }
+  .playerContent-columnRight {
+    height: 100%;
+    min-width: auto;
+    padding-left: 0;
+  }
+  .video-wrap {
+    margin-bottom: 2px;
+  }
+  .control-chat {
+    display: initial !important;
+  }
+  .control-fullscreen {
+    display: none;
+  }
+  .player-userlist {
+    margin-bottom: 2px;
+  }
+  #playerUserList1 {
+    display: none;
+  }
+
+  #playerUserList2 {
+    display: flex;
+    flex: 1;
+  }
+
+  #playerUserList2 > .table > .table-tr {
+    flex-flow: column;
+  }
+
+  .player-buttonlist {
+    min-height: 60px;
+    padding: 10px !important;
+  }
+
+  #chatlist,
+  #chatlist-controls {
+    display: none;
+  }
+
+  .inchat #root {
+    height: 100%;
+  }
+
+  .inchat #playerUserList1,
+  .inchat #playerUserList2 {
+    display: none;
+  }
+
+  .inchat #chatlist {
+    display: flex;
+    position: absolute;
+    top: 62px;
+    right: 0;
+    width: 100%;
+    height: calc(100% - 132px);
+    z-index: 10;
+  }
+  .inchat #playerContent .playerContent-rowBottom {
+    display: block;
+  }
+
+  .inchat #chatlist-controls {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    z-index: 2;
+  }
+
+  #playerButtonList {
+    width: 100vw;
+  }
+}

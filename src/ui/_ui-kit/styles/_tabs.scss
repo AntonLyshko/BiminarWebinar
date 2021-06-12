@@ -1,0 +1,40 @@
+
+.ant-tabs {
+  font-size: inherit;
+}
+
+.ant-tabs-nav-container {
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 500;
+}
+
+.ant-tabs-nav {
+
+
+  .ant-tabs-tab {
+    color: #607d8b;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+
+    &:hover {
+      color: #2c3e50;
+    }
+  }
+
+  .ant-tabs-tab-active {
+    font-weight: bold;
+    color: #2c3e50;
+  }
+}
+
+.ant-tabs-bar {
+  border-color: #d4e9f7;
+  margin: 0;
+}
+
+.ant-tabs-ink-bar {
+  height: 3px;
+  background-color: #5dade2;
+}

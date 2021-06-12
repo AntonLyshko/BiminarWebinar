@@ -1,0 +1,39 @@
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'PT Sans Narrow', sans-serif;
+  margin: 0 !important;
+  font-weight: bold;
+  //color: #2c3e50;
+  color: inherit !important;
+}
+
+.ant-typography {
+  font-family: 'PT Sans Narrow', sans-serif;
+  color: inherit;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+span.ant-typography {
+  font-family: 'DINPro', sans-serif;
+
+}
+
+div.ant-typography, .ant-typography p, .ant-typography-content p {
+  font-size: 18px;
+}
+
+.ant-typography {
+  img {
+    max-width: 100%;
+    margin-bottom: 20px;
+    display: block;
+  }
+}
+
+.ant-typography-content {
+  font-family: 'PT Sans Narrow', sans-serif;
+
+  h1, h2, h3, h4, h5, h6, p {
+    margin-bottom: 20px !important;
+  }
+}

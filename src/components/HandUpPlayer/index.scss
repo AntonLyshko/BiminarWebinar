@@ -1,0 +1,154 @@
+@import "../../styles/index.scss";
+@import "../../styles/antd/_variables.scss";
+
+.ant-popover-inner {
+  background-color: #34495E;
+}
+.ant-popover-arrow {
+  border-color: #34495E !important;
+}
+
+.playerStream {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: fit-content;
+  background-color: black;
+
+  &__main_setting_popover {
+    position: absolute;
+    z-index: 2;
+    left: 20px;
+    bottom: 10px;
+  }
+
+  &__popover-content {
+    color: white;
+    text-align: initial;
+  }
+
+  &__main_setting_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    border-radius: 16px;
+    background-color: rgba(0,0,0,0.7);
+    cursor: pointer;
+  }
+
+  .video-wrap {
+    margin-bottom: 0px;
+  }
+
+  &__video-cancel {
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    width: 100%;
+    height: 100%;
+    background-color: #34495E;
+    z-index: 1;
+
+    &>span>svg {
+      width: 50px;
+      height: 50px;
+
+      path {
+        fill: #2b3e4f;
+      }
+    }
+  }
+
+  &__playerStream {
+    position: relative;
+    width: 100%;
+  }
+
+  &--hidden {
+    display: none;
+  }
+
+  &__controls {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    z-index: 2;
+  }
+
+  &__mute {
+    width: 40px;
+    height: 32px;
+    margin-left: 10px;
+    text-align: center;
+    font-size: 16px;
+    color: white;
+    line-height: 32px;
+    padding: 0;
+
+    &>span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &:hover {
+      background: #5dade2;
+    }
+    &:active {
+      background: #2a7aaf;
+    }
+
+    &--muted {
+      background-color: #FF6E71 !important;
+      border-color: #FF6E71 !important;
+    }
+  }
+
+  &__mobileStream {
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff;
+
+    svg {
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+  &__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    display: flex;
+    background: #34495e;
+  }
+
+/*  &__video {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: fit-content;
+    background: $elementBackground  ;
+
+    video {
+      width: 100%;
+      height: 100%;
+    }
+  }*/
+}

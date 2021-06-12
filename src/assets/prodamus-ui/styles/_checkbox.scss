@@ -1,0 +1,57 @@
+
+.ant-checkbox {
+
+  + span {
+    display: flex;
+    align-items: center;
+    margin-left: 7px;
+    line-height: 1;
+
+    .ant-btn-link {
+      font-size: 15px;
+      padding: 0;
+      margin-left: 0.3em;
+      line-height: 1;
+      font-weight: 500;
+      height: auto;
+    }
+  }
+
+
+  &-inner {
+    background-color: transparent;
+    border-width: 2px;
+    border-color: #97A5A6;
+
+    &:after {
+      top: 5px;
+      left: 2px;
+    }
+  }
+
+  &-wrapper {
+    color: #5F7C8C;
+    font-weight: 400;
+    font-family: 'DINPro', sans-serif;
+    font-size: 15px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  &-checked {
+
+
+    &:after {
+      border-color: #3399DB;
+    }
+
+    .ant-checkbox-inner {
+      border-color: #3399DB;
+      background: #3399DB;
+
+      &:after {
+        border-color: #fff;
+      }
+    }
+  }
+}

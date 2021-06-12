@@ -1,0 +1,9 @@
+.chat {
+  min-height: 100%;
+  max-height: 640px;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 4px;
+  background-color: rgb(52, 73, 94);
+}

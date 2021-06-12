@@ -1,0 +1,116 @@
+.ant-input-affix-wrapper {
+  background: transparent;
+  padding: 10px 20px;
+  box-shadow: none !important;
+  border: solid 1px transparent;
+  line-height: inherit;
+  font-size: inherit;
+  border-radius: 6px;
+
+
+  &-focused {
+    background: #fff;
+    border-color: rgba(45, 61, 79, 0.05);
+
+    &:hover {
+      border-color: rgba(45, 61, 79, 0.05);
+    }
+
+
+    .ant-input {
+      background: #fff;
+
+    }
+  }
+}
+
+.ant-form-item-control-input-content {
+  background: rgba(45, 61, 79, 0.05);
+  border-radius: 6px;
+}
+
+.ant-input {
+  color: #2c3e50;
+  border-radius: 6px;
+  background: transparent;
+  border: solid 1px transparent;
+  padding: 10px 20px;
+  box-shadow: none !important;
+  font-size: 18px;
+
+  &:focus {
+    background-color: #fff;
+    border-color: rgba(45, 61, 79, 0.05);
+  }
+
+  &[disabled] {
+    color: #95a5a6;
+    background: rgba(0, 0, 0, 0.05);
+    border-color: rgba(0, 0, 0, 0.05) !important;
+  }
+}
+
+input::-webkit-input-placeholder, input::placeholder {
+  color: #3a4b53 !important;
+  opacity: 0.5;
+}
+
+input:focus::placeholder, input:focus::-webkit-input-placeholder, input:focus::-moz-placeholder, input:focus:-moz-placeholder {
+  color: transparent !important;
+}
+
+textarea {
+  overflow: auto;
+  overflow-x: hidden;
+
+  &::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  &::-webkit-scrollbar {
+    width: 8px;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #3498db;
+  }
+}
+
+.ant-form-item-has-error .ant-input,
+.ant-form-item-has-error .ant-input-affix-wrapper,
+.ant-form-item-has-error .ant-input:hover,
+.ant-form-item-has-error .ant-input-affix-wrapper:hover,
+.ant-form-item-has-error .react-tel-input .form-control.invalid-number {
+  border-color: #e74c3c;
+}
+
+.ant-form-item-has-error .react-tel-input .form-control.invalid-number {
+  background-color: #fff;
+}
+
+.ant-form-item-has-error {
+  .ant-form-item-children-icon {
+    .anticon-close-circle {
+      svg {
+        fill: #e74c3c;
+      }
+    }
+  }
+}
+
+/* Change autocomplete styles in WebKit */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 1000px rgba(45, 61, 79, 0.05) inset !important;
+  transition: background-color 5000s ease-in-out 0s
+}
